@@ -22,7 +22,7 @@
          * 使用建構式賦值
       * 封裝 `新增`, `讀取`, `修改`, `刪除` 的功能
       * 使用端使用 EmployeeService 來存取資料
-      * Const(常數), Readonly 的差別
+      * [常數 const](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/keywords/const)
 
 ## 練習題
   * 實作 [AES](https://zh.wikipedia.org/wiki/高级加密标准) 加解密的類別
