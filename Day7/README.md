@@ -1,13 +1,16 @@
 ## chapter 8
 
-說明最上層的 Excpetion 是 Exception 類別
+* try catch finally 說明。
+  * 說明可以多個 catch
+  * Exception 是最上層
+  * 說明 finally 一定要執行
 
-try
-catch
+* 使用 [NLog](https://nlog-project.org/) 紀錄 Exception 訊息
+  * 安裝
+  * 使用
 
-catch 不同 Exception 。
-
-finally
+* 讀取 csv 檔案，將 csv 的資料存到物件
+  * 
 
 使用 [NLog](https://nlog-project.org/) 紀錄 Log
 講解 NLog
