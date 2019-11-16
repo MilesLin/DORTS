@@ -5,33 +5,37 @@
   * Exception 是最上層
   * 說明 finally 一定要執行
 
+
+教怎麼看 Exception 訊息
+
+
+* 題目:
+  * 新增資料的 Exception
+    * 請輸入 信箱 abc@abc.com
+    * 命名 Ken
+    * 主修選擇 資訊工程
+    * 按
+    * 嘗試修好 Exception
+
 * 使用 [NLog](https://nlog-project.org/) 紀錄 Exception 訊息
   * 安裝
   * 使用
 
 * 讀取 csv 檔案，將 csv 的資料存到物件
-  * 
+  * 用 windows form 選擇檔案
 
-使用 [NLog](https://nlog-project.org/) 紀錄 Log
-講解 NLog
+
+* NPOI 建立 Excel 
+  * 
 
 製作 Excel
 
-教怎麼看 Exception 訊息
-* 新增資料的 Exception
-  * 請輸入 信箱 abc@abc.com
-  * 命名 Ken
-  * 主修選擇 資訊工程
-  * 按
 
 教怎麼看程式碼可能會發生的 Exception
 
 
 程式設計的 UI 介面本來就該避免 Exception 的發生
 
-
-題目:
-嘗試修好 Exception
 
 
 讀寫 Excel
