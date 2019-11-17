@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -16,11 +17,11 @@ namespace fix_exception
     public partial class Form1 : Form
     {
         private readonly StudentService _studentService;
+
         public Form1()
         {
             _studentService = new StudentService();
             InitializeComponent();
-            AddedMajor.SelectedIndex = 0;
             UpdateGrid();
         }
 
@@ -29,18 +30,31 @@ namespace fix_exception
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Title = "Select file";
             dialog.InitialDirectory = ".\\";
-            dialog.Filter = "xls files (*.*)|*.xls";
+
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(dialog.FileName);
+                var allLine = File.ReadLines(dialog.FileName);
+                foreach (var item in allLine.Skip(1))
+                {
+                    var values = item.Split(',');
+                    _studentService.Add(new Student
+                    {
+                        Id = values[0],
+                        FirstName = values[1],
+                        LastName = values[2],
+                        Email = values[3],
+                        Gender = values[4]
+                    });
+                }
+                
+                UpdateGrid();
             }
-
         }
 
         private void UpdateGrid()
         {
             var students = _studentService.GetAll();
-            dataGridView1.DataSource = ToDataTable(students.Values.ToList());
+            dataGridView1.DataSource = ToDataTable(students);
         }
 
         private static DataTable ToDataTable<T>(List<T> items)
