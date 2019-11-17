@@ -33,6 +33,57 @@
 * NPOI 建立 Excel [Getting Started with NPOI](https://github.com/tonyqus/npoi/wiki/Getting-Started-with-NPOI)
   * 
 
+sample code
+``` C#
+/*----------Result----------
+    ---------------------
+    |ID	|Name	|Course |
+    |1	|Miles1	|Math1  |
+    |2	|Miles2	|Math2  |
+    ---------------------
+---------------------------*/
+
+// Create Workbook and Specify Excel Version
+// [.xlsx => Excel 2007+ (new XSSFWorkbook)], [.xls => Excel 97-2003 (new HSSFWorkbook)]
+IWorkbook workbook = new XSSFWorkbook();
+
+// Use workbook to Create Sheet
+ISheet sheet = workbook.CreateSheet("sheetname");
+
+// Use sheet to Create Row
+sheet.CreateRow(0);
+
+// Use sheet to Create Cell and Set Cell Value at top row of created
+sheet.GetRow(0).CreateCell(0).SetCellValue("ID");
+sheet.GetRow(0).CreateCell(1).SetCellValue("Name");
+sheet.GetRow(0).CreateCell(2).SetCellValue("Course");
+
+// Use sheet to Create New Row and Set Cell Value at each row of created
+for (int i = 1; i < 3; i++)
+{
+    sheet.CreateRow(i);
+    sheet.GetRow(i).CreateCell(0).SetCellValue(i);
+    sheet.GetRow(i).CreateCell(1).SetCellValue("Miles" + i);
+    sheet.GetRow(i).CreateCell(2).SetCellValue("Math" + i);
+}
+
+// Call MemoryStream to Write it
+MemoryStream ms = new MemoryStream();
+
+// note : Inside workbook.Write() had called ms.close(), so you can't read it from MemoryStream
+//        if you want to output file, you should make MemoryStream's content Convert to Array
+workbook.Write(ms);
+
+//You have to rewind the MemoryStream before copying
+//ms.Seek(0, SeekOrigin.Begin);
+
+using (FileStream fs = new FileStream("test.xlsx", FileMode.OpenOrCreate))
+{
+    fs.Write(ms.ToArray(), 0, ms.ToArray().Length);
+    fs.Flush();
+}
+
+```
 
 * 如果要組合路徑強烈建議用 path.combine (考慮可以說)。
   * 因為跨平台
