@@ -30,6 +30,10 @@
 [System.IO.File 與 System.IO.FileInfo 比較說明](https://stackoverflow.com/questions/4003233/what-is-the-difference-between-system-io-file-and-system-io-fileinfo)
 [Directory vs DirectoryInfo](https://stackoverflow.com/questions/3146586/directory-vs-directoryinfo)
 
+* NPOI 建立 Excel [Getting Started with NPOI](https://github.com/tonyqus/npoi/wiki/Getting-Started-with-NPOI)
+  * 
+
+
 * 如果要組合路徑強烈建議用 path.combine (考慮可以說)。
   * 因為跨平台
   * 會檢查非法字元  
@@ -41,8 +45,6 @@
   * Directory 負責處理資料夾
   * Path 提供補助方法，處理路徑與檔案名稱取得的 API
 
-* NPOI 建立 Excel 
-  * 
 
 製作 Excel
 
