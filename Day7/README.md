@@ -25,7 +25,7 @@ Unhandled Exception: System.FormatException: Input string was not in a correct f
 * [如何使用 NLog 設定 EMAIL 發送](https://github.com/NLog/NLog/wiki/Mail-target)
 
 
-## 使用 [System.IO.File](https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) 取代 [System.IO.FileInfo](https://docs.microsoft.com/en-us/dotnet/api/system.io.fileinfo?redirectedfrom=MSDN&view=netframework-4.8)  
+## 使用 [System.IO.File](https://docs.microsoft.com/zh-tw/dotnet/api/system.io.file?view=netframework-4.8) 取代 [System.IO.FileInfo](https://docs.microsoft.com/en-us/dotnet/api/system.io.fileinfo?redirectedfrom=MSDN&view=netframework-4.8)  
   * 使用 File API 讀取檔案  
 
 ### 參考
