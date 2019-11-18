@@ -5,6 +5,9 @@
 * 使用 [when](https://docs.microsoft.com/zh-tw/dotnet/csharp/language-reference/keywords/try-catch) 設定條件
 * finally 用法
 
+### 參考
+* [例外狀況和例外處理 (C# 程式設計手冊)](https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/exceptions/)
+
 ## 練習如何看 Exception 訊息
 ``` LOG
 Unhandled Exception: System.FormatException: Input string was not in a correct format.
