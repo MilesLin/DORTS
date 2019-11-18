@@ -12,6 +12,8 @@ Unhandled Exception: System.FormatException: Input string was not in a correct f
    at System.Single.Parse(String s)
    at int_try.Program.Main(String[] args) in D:\Course_Labs\DORTS\Day7\int_try\int_try\Program.cs:line 13
 ```
+### 練習如何修復 Exception
+* 可以使用 `MessageBox.Show("提示訊息");` 顯示提示訊息
 
 ## 使用 [NLog](https://nlog-project.org/) 套件，紀錄 LOG 訊息
   * 安裝 [NLog.Config](https://www.nuget.org/packages/NLog.Config/)
@@ -82,6 +84,20 @@ using (FileStream fs = new FileStream("test.xlsx", FileMode.OpenOrCreate))
 }
 
 ```
+### NPOI 讀取現有 Excel 範例程式碼
+``` C#
+FileStream fileStream = new FileStream("sample.xlsx", FileMode.Open, FileAccess.Read);
+
+IWorkbook workbook = new XSSFWorkbook(fileStream);
+
+ISheet sheet = workbook.GetSheetAt(0);
+
+.
+.
+.
+
+```
+
 
 ### 參考
 [Getting Started with NPOI](https://github.com/tonyqus/npoi/wiki/Getting-Started-with-NPOI)
