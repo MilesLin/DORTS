@@ -13,7 +13,7 @@ namespace LINQ_Practice
         public void TestMethod1()
         {
             /*
-                題目: 請將 Course 的資料攤平，與 Student 放到同一個層級
+                題目: 請將 Student 的資料格式，轉換成 expected 的資料格式
                 提示: 使用 SelectMany
 
                 請參考此文章作答: https://dotblogs.com.tw/mileslin/2016/03/01/015739
