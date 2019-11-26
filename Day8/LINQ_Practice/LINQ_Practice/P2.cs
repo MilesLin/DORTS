@@ -7,28 +7,38 @@ using System.Linq;
 namespace LINQ_Practice
 {
     [TestClass]
-    public class P1
+    public class P2
     {
         [TestMethod]
         public void TestMethod1()
         {
             /*
-                題目: 請過濾出名字有包含 Lee 的 Student
+                題目: 請按照成績由低到高排序，並且將資料型態從 Student 轉成 StudentViewModel
             */
 
             // Arrange
             var data = GetData();
 
             // 請更改這段程式碼，並完成題目
-            var result = data.Where(x => x.Name.Contains("Lee"));
+            var result = data.OrderBy(x => x.Score)
+                .Select(x => new StudentViewModel
+                {
+                    Name = x.Name,
+                    Score = x.Score
+                });
 
             // Assert
-            var expected = new[]
+            var expected = new List<StudentViewModel>
             {
-                new { Id=1, Name="Bob Lee" },
-                new { Id=4, Name="John Lee" }
+                new StudentViewModel { Name = "Mary Lin", Score = 40 },
+                new StudentViewModel { Name = "Kevin Wu", Score = 59 },
+                new StudentViewModel { Name = "Bob Lee", Score = 79 },
+                new StudentViewModel { Name = "John Lee", Score = 80 },
+                new StudentViewModel { Name = "Mike Cheng", Score = 91 }
             };
+
             expected.ToExpectedObject().ShouldMatch(result);
+            Assert.IsInstanceOfType(result, typeof(IEnumerable<StudentViewModel>));
         }
 
         private List<Student> GetData()
@@ -42,6 +52,5 @@ namespace LINQ_Practice
                 new Student { Id = 5, Name = "Mike Cheng", Score = 91 }
             };
         }
-    }
-
+    }    
 }
