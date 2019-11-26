@@ -3,56 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 namespace Func_Usage
 {
-    public class SchoolSystem_2
+    public class SchoolSystem_4
     {
         public void Go()
         {
             List<Student> allStudents = GetStudents();
             List<Employee> allEmployees = GetEmployee();
 
-            var result1 = FilterStudentScore(allStudents);
-            var result2 = FilterStudentName(allStudents);
-            var result3 = FilterEmployeeName(allEmployees);
+            var result1 = Filter<Student>(allStudents, (x) => { 
+                return x.Score >= 60;
+            });
 
+            var result2 = Filter<Student>(allStudents, (x) => {
+                return x.Name == "Bob";
+            });
+
+            var result3 = Filter<Employee>(allEmployees, (x) => {
+                return x.Name == "Kevin";
+            });
         }
 
-        private Student FilterStudentScore(List<Student> students)
+        private T Filter<T>(List<T> values, Func<T, bool> filter)
         {
-            foreach (Student item in students)
+            foreach (T item in values)
             {
-                if (item.Score >= 60)
+                if (filter(item))
                 {
                     return item;
                 }
             }
 
-            return null;
-        }
-
-        private Student FilterStudentName(List<Student> students)
-        {
-            foreach (Student item in students)
-            {
-                if (item.Name == "Bob")
-                {
-                    return item;
-                }
-            }
-
-            return null;
-        }
-
-        private Employee FilterEmployeeName(List<Employee> employees)
-        {
-            foreach (Employee item in employees)
-            {
-                if (item.Name == "Kevin")
-                {
-                    return item;
-                }
-            }
-
-            return null;
+            return default(T);
         }
 
 

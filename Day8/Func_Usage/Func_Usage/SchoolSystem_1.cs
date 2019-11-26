@@ -1,29 +1,30 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 namespace Func_Usage
 {
-    public class SchoolSystem
+    public class SchoolSystem_1
     {
         public Student GetFirstPassedStudents()
         {
             List<Student> allStudents = GetData();
 
-            Student result = this.FilterStudent(allStudents);
+            // 把方法寫成變數
+            Func<List<Student>, Student> filterStudent = (students) =>
+            {
+                foreach (var item in students)
+                {
+                    if (item.Score >= 60)
+                    {
+                        return item;
+                    }
+                }
+                return null;
+            };
+
+            Student result = filterStudent(allStudents);
 
             return result;
-        }
-
-        private Student FilterStudent(List<Student> students)
-        {
-            foreach (var item in students)
-            {
-                if (item.Score >= 60)
-                {
-                    return item;
-                }
-            }
-
-            return null;
         }
 
         private List<Student> GetData()
@@ -37,6 +38,5 @@ namespace Func_Usage
                 new Student { Id = 5, Name = "John", Score = 80 }
             };
         }
-
     }
 }

@@ -10,15 +10,9 @@ namespace Func_Usage
     {
         static void Main(string[] args)
         {
-
             var school = new SchoolSystem();
-            List<Student> result = school.GetPassedStudents();
-
-            foreach (var item in result)
-            {
-                Console.WriteLine($"{item.Name}: {item.Score}");
-            }
-
+            Student result = school.GetFirstPassedStudents();
+            Console.WriteLine($"{result.Name}: {result.Score}");
         }
     }
 }

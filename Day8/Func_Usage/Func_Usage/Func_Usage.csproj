@@ -42,9 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Employee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchoolSystem_4.cs" />
+    <Compile Include="SchoolSystem_5.cs" />
+    <Compile Include="SchoolSystem_3.cs" />
     <Compile Include="SchoolSystem_2.cs" />
+    <Compile Include="SchoolSystem_1.cs" />
     <Compile Include="SchoolSystem.cs" />
     <Compile Include="Student.cs" />
   </ItemGroup>

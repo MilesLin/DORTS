@@ -3,24 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 namespace Func_Usage
 {
-    public class SchoolSystem_2
+    public class SchoolSystem_3
     {
         public void Go()
         {
             List<Student> allStudents = GetStudents();
             List<Employee> allEmployees = GetEmployee();
 
-            var result1 = FilterStudentScore(allStudents);
-            var result2 = FilterStudentName(allStudents);
-            var result3 = FilterEmployeeName(allEmployees);
+            var result1 = FilterStudent(allStudents, (x) => { 
+                return x.Score >= 60;
+            });
+
+            var result2 = FilterStudent(allStudents, (x) => {
+                return x.Name == "Bob";
+            });
+
+            var result3 = FilterEmployee(allEmployees, (x) => {
+                return x.Name == "Kevin";
+            });
 
         }
 
-        private Student FilterStudentScore(List<Student> students)
+        private Student FilterStudent(List<Student> students, Func<Student, bool> filter)
         {
             foreach (Student item in students)
             {
-                if (item.Score >= 60)
+                if (filter(item))
                 {
                     return item;
                 }
@@ -28,25 +36,12 @@ namespace Func_Usage
 
             return null;
         }
-
-        private Student FilterStudentName(List<Student> students)
-        {
-            foreach (Student item in students)
-            {
-                if (item.Name == "Bob")
-                {
-                    return item;
-                }
-            }
-
-            return null;
-        }
-
-        private Employee FilterEmployeeName(List<Employee> employees)
+        
+        private Employee FilterEmployee(List<Employee> employees, Func<Employee, bool> filter)
         {
             foreach (Employee item in employees)
             {
-                if (item.Name == "Kevin")
+                if (filter(item))
                 {
                     return item;
                 }
