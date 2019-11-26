@@ -20,7 +20,7 @@ namespace LINQ_Practice
             var data = GetData();
 
             // 請更改這段程式碼，並完成題目
-            var result = data.ToDictionary(x => x.Id, x => x);
+            Dictionary<int, Student> result = data.ToDictionary(x => x.Id, x => x);
 
             // Assert
             var expected = new Dictionary<int, Student>
@@ -30,6 +30,39 @@ namespace LINQ_Practice
                 { 3, new Student { Id = 3, Name = "Mary Lin", Score = 40 } },
                 { 4, new Student { Id = 4, Name = "John Lee", Score = 80 } },
                 { 5, new Student { Id = 5, Name = "Mike Cheng", Score = 91 } }
+            };
+
+            expected.ToExpectedObject().ShouldMatch(result);
+        }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            /*
+                題目: 請將 Dictionary<int, Student> 轉換成 List<Student>
+            */
+
+            // Arrange
+            var data = new Dictionary<int, Student>
+            {
+                { 1, new Student { Id = 1, Name = "Bob Lee", Score = 79 } },
+                { 2, new Student { Id = 2, Name = "Kevin Wu", Score = 59 } },
+                { 3, new Student { Id = 3, Name = "Mary Lin", Score = 40 } },
+                { 4, new Student { Id = 4, Name = "John Lee", Score = 80 } },
+                { 5, new Student { Id = 5, Name = "Mike Cheng", Score = 91 } }
+            };
+
+            // 請更改這段程式碼，並完成題目
+            IEnumerable<Student> result = data.Select(x => x.Value);
+
+            // Assert
+            var expected = new List<Student>
+            {
+                new Student { Id = 1, Name = "Bob Lee", Score = 79 },
+                new Student { Id = 2, Name = "Kevin Wu", Score = 59 },
+                new Student { Id = 3, Name = "Mary Lin", Score = 40 },
+                new Student { Id = 4, Name = "John Lee", Score = 80 },
+                new Student { Id = 5, Name = "Mike Cheng", Score = 91} 
             };
 
             expected.ToExpectedObject().ShouldMatch(result);
