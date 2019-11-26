@@ -20,7 +20,6 @@ namespace LINQ_Practice
             int[] numbers = { 3, 5, 7 };
             string[] words = { "three", "five", "seven" };
 
-
             // 請更改這段程式碼，並完成題目
             IEnumerable<string> result = numbers.Zip(words, (n, w) => n + "=" + w);
 

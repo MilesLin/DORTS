@@ -52,8 +52,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Course.cs" />
     <Compile Include="Models\StudentViewModel.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="P9.cs" />
     <Compile Include="P8.cs" />
     <Compile Include="P7.cs" />
     <Compile Include="P6.cs" />

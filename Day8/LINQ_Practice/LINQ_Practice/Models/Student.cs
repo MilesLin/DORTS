@@ -13,6 +13,7 @@ namespace LINQ_Practice.Models
         public string Name { get; set; }
         public int Score { get; set; }
         public Degree Degree { get; set; }
+        public List<Course> Course { get; set; }
     }
 
     public enum Degree

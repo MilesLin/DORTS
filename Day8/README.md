@@ -1,20 +1,13 @@
 ## 認識 Func<T, T>
-* 看懂 Func 語法
+學習如何看懂 `Func<T, TResult>`
 
-* 先使用 Func 建立一個方法
-* 製作 Where 
+### 參考:
+* [Func<T,TResult>](https://docs.microsoft.com/zh-tw/dotnet/api/system.func-2?view=netframework-4.8)
 
-練習
-* Method => Func => 泛型 => 擴充方法
-SchoolSystem_1 => 將方法寫成 func
-SchoolSystem_3 => 將條件抽成 func
-SchoolSystem_4 => 使用泛型+func
-SchoolSystem_5 => 使用泛型+func+擴充方法
 
 ## Language Integrated Query (LINQ)
-要講 Linq 可以一直用下去
+LINQ 是一組以直接將查詢功能整合至 C# 語言為基礎之技術的名稱。 
 
-常用 LINQ API
 | Operator   | Description   |
 |---|---|
 | [Where](https://docs.microsoft.com/zh-tw/dotnet/api/system.linq.enumerable.where?view=netframework-4.8)   |  Returns values from the collection based on a predicate function |
@@ -36,23 +29,19 @@ SchoolSystem_5 => 使用泛型+func+擴充方法
 
 
 ### 參考
-[LINQ Tutorial](https://www.tutorialsteacher.com/linq/linq-tutorials)
-[LINQ APIs](https://docs.microsoft.com/zh-tw/dotnet/api/system.linq.enumerable?view=netframework-4.8)
-
+* [LINQ Tutorial](https://www.tutorialsteacher.com/linq/linq-tutorials)
+* [LINQ APIs](https://docs.microsoft.com/zh-tw/dotnet/api/system.linq.enumerable?view=netframework-4.8)
+* [Language Integrated Query (LINQ)](https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/concepts/linq/)
 
 ## 匿名型別
 匿名類型提供一個便利的方法，將一組唯讀屬性封裝成一個物件，而不需要事先明確定義類型。 類型名稱會由編譯器產生，並且無法在原始程式碼層級使用。
 
 ### 參考:
-[匿名類型 (C# 程式設計手冊)](https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types)
+* [匿名類型 (C# 程式設計手冊)](https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types)
 
-## List VS IEnumerable
-更改值後的比較
-[LINQ Deferred Execution](https://www.tutorialsteacher.com/linq/linq-deferred-execution)
-延遲執行的特性說明
+## 延遲執行的特性說明
+* [LINQ Deferred Execution](https://www.tutorialsteacher.com/linq/linq-deferred-execution)
+* [快快樂樂學LINQ系列前哨戰－延遲執行 (Deferred Execution)](https://dotblogs.com.tw/hatelove/archive/2013/09/10/csharp-linq-deferred-execution-introduction.aspx)
 
-[快快樂樂學LINQ系列前哨戰－延遲執行 (Deferred Execution)](https://dotblogs.com.tw/hatelove/archive/2013/09/10/csharp-linq-deferred-execution-introduction.aspx)
-
-
-## 推薦工具
+## 推薦學習 LINQ 工具
 * [LINQPad](https://www.linqpad.net/)
