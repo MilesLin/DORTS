@@ -31,6 +31,23 @@ namespace LINQ_Practice
             expected.ToExpectedObject().ShouldMatch(result);
         }
 
+        [TestMethod]
+        public void TestMethod2()
+        {
+            /*
+                題目: 請算出學生的平均分數
+            */
+
+            // Arrange
+            var data = GetData();
+
+            // 請更改這段程式碼，並完成題目
+            var result = data.Average(x => x.Score);
+
+            // Assert
+            Assert.AreEqual(69.8, result);
+        }
+
         private List<Student> GetData()
         {
             return new List<Student>
