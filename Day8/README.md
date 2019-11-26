@@ -6,14 +6,14 @@
 
 練習
 * Method => Func => 泛型 => 擴充方法
-
-## 匿名型別
-匿名類型提供一個便利的方法，將一組唯讀屬性封裝成一個物件，而不需要事先明確定義類型。 類型名稱會由編譯器產生，並且無法在原始程式碼層級使用。
-
-### 參考:
-[匿名類型 (C# 程式設計手冊)](https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types)
+SchoolSystem_1 => 將方法寫成 func
+SchoolSystem_3 => 將條件抽成 func
+SchoolSystem_4 => 使用泛型+func
+SchoolSystem_5 => 使用泛型+func+擴充方法
 
 ## Language Integrated Query (LINQ)
+要講 Linq 可以一直用下去
+
 常用 LINQ API
 | Operator   | Description   |
 |---|---|
@@ -31,6 +31,7 @@
 | [Skip](https://docs.microsoft.com/zh-tw/dotnet/api/system.linq.enumerable.skip?view=netframework-4.8)  | Skips elements up to a specified position starting from the first element in a sequence.  |
 | [Take](https://docs.microsoft.com/zh-tw/dotnet/api/system.linq.enumerable.take?view=netframework-4.8)  | Partitioning operators split the sequence (collection) into two parts and returns one of the parts.  |
 | [Count](https://docs.microsoft.com/zh-tw/dotnet/api/system.linq.enumerable.count?view=netframework-4.8)  | The Count operator returns the number of elements in the collection or number of elements that have satisfied the given condition.   |
+| [Zip](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.zip?view=netframework-4.8)| Applies a specified function to the corresponding elements of two sequences, producing a sequence of the results.|
 | [ToList](https://docs.microsoft.com/zh-tw/dotnet/api/system.linq.enumerable.tolist?view=netframework-4.8)  | Use ToList to force immediate query evaluation and return a List<T> that contains the query results  |
 
 
@@ -39,15 +40,18 @@
 [LINQ APIs](https://docs.microsoft.com/zh-tw/dotnet/api/system.linq.enumerable?view=netframework-4.8)
 
 
+## 匿名型別
+匿名類型提供一個便利的方法，將一組唯讀屬性封裝成一個物件，而不需要事先明確定義類型。 類型名稱會由編譯器產生，並且無法在原始程式碼層級使用。
+
+### 參考:
+[匿名類型 (C# 程式設計手冊)](https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types)
+
 ## List VS IEnumerable
 更改值後的比較
 [LINQ Deferred Execution](https://www.tutorialsteacher.com/linq/linq-deferred-execution)
 延遲執行的特性說明
 
 [快快樂樂學LINQ系列前哨戰－延遲執行 (Deferred Execution)](https://dotblogs.com.tw/hatelove/archive/2013/09/10/csharp-linq-deferred-execution-introduction.aspx)
-
-
-### 參考
 
 
 ## 推薦工具
