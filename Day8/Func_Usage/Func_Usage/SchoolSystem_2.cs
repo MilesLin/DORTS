@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-
+using System.Linq;
 namespace Func_Usage
 {
-    public class SchoolSystem
+    public class SchoolSystem_2
     {
-        public Student GetFirstPassedStudents()
+        public List<Student> GetPassedStudents()
         {
             List<Student> students = new List<Student>
             {
@@ -15,22 +15,25 @@ namespace Func_Usage
                 new Student { Id = 5, Name = "John", Score = 80 }
             };
 
-            Student result = this.FilterStudent(students);
+            //students.Where
+            var result = FilterStudent(students);
 
             return result;
         }
 
-        private Student FilterStudent(List<Student> students)
+        private List<Student> FilterStudent(List<Student> students)
         {
+            List<Student> result = new List<Student>();
+
             foreach (var item in students)
             {
                 if (item.Score >= 60)
                 {
-                    return item;
+                    result.Add(item);
                 }
             }
 
-            return null;
+            return result;
         }
     }
 }
