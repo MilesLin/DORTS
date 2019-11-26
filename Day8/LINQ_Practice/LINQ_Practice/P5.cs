@@ -47,6 +47,25 @@ namespace LINQ_Practice
             Assert.AreEqual(result, expected);
         }
 
+        [TestMethod]
+        public void TestMethod3()
+        {
+            /*
+                題目: 請抓出第一個分數高於 90 分的學生
+            */
+
+            // Arrange
+            var data = GetData();
+
+            // 請更改這段程式碼，並完成題目
+            Student result = data.FirstOrDefault(x => x.Score >= 90);
+
+            // Assert
+            var expected = new Student { Id = 5, Name = "Mike Cheng", Score = 91 };
+
+            expected.ToExpectedObject().ShouldMatch(result);
+        }
+
         private List<Student> GetData()
         {
             return new List<Student>
