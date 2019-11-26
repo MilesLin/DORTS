@@ -23,6 +23,7 @@ namespace Func_Usage
     {
         public void Go()
         {
+            // 使用擴充方法
             List<Student> allStudents = GetStudents();
             List<Employee> allEmployees = GetEmployee();
 

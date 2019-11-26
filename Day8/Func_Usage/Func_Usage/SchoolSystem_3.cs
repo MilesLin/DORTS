@@ -7,6 +7,7 @@ namespace Func_Usage
     {
         public void Go()
         {
+            // 用 Func 減少方法
             List<Student> allStudents = GetStudents();
             List<Employee> allEmployees = GetEmployee();
 

@@ -7,6 +7,7 @@ namespace Func_Usage
     {
         public void Go()
         {
+            // 各種不同的 Filter
             List<Student> allStudents = GetStudents();
             List<Employee> allEmployees = GetEmployee();
 

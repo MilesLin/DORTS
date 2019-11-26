@@ -7,6 +7,7 @@ namespace Func_Usage
     {
         public void Go()
         {
+            // 使用泛型 + Func
             List<Student> allStudents = GetStudents();
             List<Employee> allEmployees = GetEmployee();
 
