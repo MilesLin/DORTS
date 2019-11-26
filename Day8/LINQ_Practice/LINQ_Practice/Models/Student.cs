@@ -12,5 +12,13 @@ namespace LINQ_Practice.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Score { get; set; }
+        public Degree Degree { get; set; }
+    }
+
+    public enum Degree
+    {
+        一年級,
+        二年級,
+        三年級
     }
 }
